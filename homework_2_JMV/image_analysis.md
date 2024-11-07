@@ -32,3 +32,6 @@ The images we're provided from (JMV Slides)[https://github.com/alegrand/SMPE/blo
         - impr: Specify what was sold, and consider using a ratio on the Y-axis (such as sales-to-production)
 
 **Everything else seems to checkout**
+
+## Some other graph
+*stay tuned, there's more to come*
