@@ -33,5 +33,45 @@ The images we're provided from (JMV Slides)[https://github.com/alegrand/SMPE/blo
 
 **Everything else seems to checkout**
 
-## Some other graph
-*stay tuned, there's more to come*
+## Monthly number of objects in earth orbit by object type
+![](https://github.com/keserz/SMPE24/blob/main/homework_2_JMV/img/object_orbit.png)
+
+**Checklist**
+- [ ] Graphical objects
+    - [ ] Graphical objects are readable on screen, on printed version (B/W), on video
+        - issue : graphical objects are not readable on a printed B/W version
+        - impr : if we stick to their visualization, i'm not sure this issue can be solved since there is many curve and adding some motifs could make it confusing
+    - [ ] Grids help the reader
+        - i would argue that the grid actually disturbs the user, reducing the grid opacity would make the reading easier for the user in my opinion
+    - [ ] Curves cross without ambiguity
+        - some curves do not cross without ambiguity, for example i can't figure out if spacecraft objects in earth orbit started in 1963 or 1957, same type of issue with mission-related debris.
+- [ ] Annotations
+    - [ ] Origin is (0, 0), if not it should be clearly justified
+        - Although the x axis (years) doesn't start at 0, the authors should explain somewhere why they start at 1956, maybe something like "analysis of object in earth orbit started in 1956"
+- [ ] Information
+    - [ ] Curves are on the same scale
+        - The total object curve is thicker than all the other curves
+
+**My 2 cents**
+The graph is a little confusing during the 1956 - 1966 period because there is a lot of curves on top of each others, maybe a "stack" representation could leverage this issue (drawing example below). I think that we also lack some additional information like an explanation of why was there a sudden spike in fragmentation debris in the year 2007. Other spike could also be explained with a little tag (example below).
+
+
+## Demandeurs d'emplois
+![](https://github.com/keserz/SMPE24/blob/main/homework_2_JMV/img/pole_emploi.png)
+
+**Checklist**
+- [ ] Graphical objects
+    - [ ] Graphical objects are readable on screen, on printed version (B/W), on video
+        - issue : graphical objects are not readable on a printed B/W version
+        - impr : different dashed length line could solve this issue
+- [ ] Annotation
+    - [ ] Origin is (0, 0), if not it should be clearly justified
+        - X-axis
+            - issue : The title of the graph says from 1996 to 2017, however the origin of the graph seems to start in 2011, we can see that there is a "zooming interaction effect" bellow the x axis but there isn't any information as to why it starts in 2011.
+        - Y-axis
+            - issue : the axis doesn't start from 0.
+        - in this graph the information portrayed seems to show that there is a large gap between category ABC and A however if we scale this graph between 0 and 6 millions, we would see very little difference between these two lines
+    - [ ] Each curve has a legend
+        - issue : Each curve has indeed a legend but we have no information as to what they mean, what is category A and category ABC, is category A engulfed in category ABC ? are they completely distinct categories ? why would we want to compare them ? so many questions ...
+- [ ] Context
+    - issue : as mentioned previously we don't know anything as to what the categories mean, additionally the title says that these are the people who register at pole emploi at the end of the month, why would we want to only portray citizen looking for a job only at the end of the month ? Do they mean that these are the number of people still registered by the end of the month or that registered at the end of the month ? also, when is the "end of the month" starts ? is it the 20th, the 25th, the 29th ? did they pick the 25th for january then the 20th for february and so on or is it the same day for each month ?
