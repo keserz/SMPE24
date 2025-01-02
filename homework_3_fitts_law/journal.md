@@ -1,7 +1,7 @@
 # Laboratory Notebook for a user pointing experiment
 
 ## Project overview
-The following introduction is copied from the work of Céline Coutrix who explored the relationship between movement time, target distance and target width in the context of Fitt's law :
+The following introduction is copied from the [work of Céline Coutrix](https://gricad-gitlab.univ-grenoble-alpes.fr/coutrixc/m2r_pointingxp/-/tree/main?ref_type=heads) who explored the relationship between movement time, target distance and target width in the context of Fitt's law :
 
 *Fitts described 1954 the relationship between the distance to a target, its width, and the time needed to acquire it [[Fitts, 1954](http://www2.psychology.uiowa.edu/faculty/mordkoff/InfoProc/pdfs/Fitts%201954.pdf)].*
 
@@ -30,6 +30,9 @@ This folder contains 2 experiment performed by the same participant on the [poin
 #### Second experiment
 - `raw_data2`, i.e. the raw data  as returned from the experimental software. 
 - `mt_data2`, i.e. the processed mean movement times as returned from the experimental software.
+#### Coutrix experiment
+- `20211117_1527_RawData`, i.e. the raw data  as returned from the experimental software. 
+- `20211117_1527_MeanMT`, i.e. the processed mean movement times as returned from the experimental software. 
 
 ## Experimental reports
 
@@ -76,7 +79,10 @@ The webpage gave the following results:
 - The [mean movement time table](./data/mt_data2.csv) is provided in the [data folder](./data/)
 
 #### Data analysis
-This analysis is available in the [analysis folder](./analysis/) (R markdown file). 
+This analysis is available in the [analysis folder](./analysis/) (R markdown file).
+- `pointingAnalysis1`, analysis of experiment 1
+- `pointingAnalysis2`, analysis of experiment 2
+- `coutrixPointingAnalysis`, analysis of Coutrix's experiment
 
 
 
