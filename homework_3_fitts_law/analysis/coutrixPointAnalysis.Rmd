@@ -1,0 +1,75 @@
+---
+title: "PointingXP"
+author: "Fouad Gasmi"
+date: "02/01/2025"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Loading libraries
+
+```{r loading ggplot2}
+library(ggplot2)
+library(dplyr)
+```
+
+## Loading data
+
+```{r loading MT data into a dataframe}
+meanMTdf <- read.csv("../data/20211117_1527_MeanMT.csv", header=T)
+rawdf <- read.csv("../data/20211117_1527_RawData.csv", header=T)
+```
+
+## Plotting the data together with the linear regression
+
+```{r Plotting the MT data together with the linear regression}
+ggplot(meanMTdf, aes(ID, MT)) +
+  geom_point() +
+  geom_smooth(method='lm')
+```
+## Linear modelling
+
+```{r linear modeling of MT data}
+model <- lm(MT~ID, data = meanMTdf)
+summary(model)
+```
+As Coutrix mentionned the ID doesn't seem to have an impact on the movement time and the results are different than the one provided by the [experimental software](http://ergo.human.cornell.edu/FittsLaw/FittsLaw.html) website, MT = 904.22+27.17*log2(A/W+1)with R2=0.008146 vs MT = 1001.293 + 140.589 × log(A/W + 1) with R2 = 0.218. The lack of impact of the ID on the movement time could be explained by the fact that the target were too small in order to apply fitts law here, additionally the R2 = 0.008146 in Coutrix result is the adjusted R squared while the webpage provides the Multiple R squared value, but it still differs here, 0.1321 vs 0.218. 
+
+
+## Loading data raw data given by Cornell University Ergonomics website
+```{r loading raw data into a dataframe}
+rawdf <- read.csv("../data/20211117_1527_RawData.csv", header=T)
+```
+
+## Applying Fitt's law formula to get the ID
+```{r applying MacKenzie formula}
+rawdf$newID <- (log2((rawdf$A / rawdf$W) +1))
+```
+
+## Computing the mean MT for each unique combination of A, W, and ID
+```{r computing mean time}
+newmeanMTdf <- rawdf %>%
+  group_by(A, W, newID) %>%
+  summarise(mean_MT = mean(MT), .groups = "drop")
+```
+
+
+## Plotting the data together with the linear regression
+
+```{r Plotting the raw data together with the linear regression}
+ggplot(newmeanMTdf, aes(newID, mean_MT)) +
+  geom_point() +
+  geom_smooth(method='lm')
+```
+
+## Linear modelling
+
+```{r linear modeling of processed raw data}
+model <- lm(mean_MT~newID, data = newmeanMTdf)
+summary(model)
+```
+
+By using this analysis, we get the same result as the webpage reported in Coutrix journal.md MT = 1001.293 + 140.589 × log(A/W + 1) with R2 = 0.218.

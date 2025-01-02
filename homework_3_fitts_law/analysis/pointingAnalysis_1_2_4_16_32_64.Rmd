@@ -1,0 +1,74 @@
+---
+title: "PointingXP"
+author: "Fouad Gasmi"
+date: "02/01/2025"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Loading libraries
+
+```{r loading ggplot2}
+library(ggplot2)
+library(dplyr)
+```
+
+## Loading data
+
+```{r loading MT data into a dataframe}
+meanMTdf <- read.csv("../data/mt_data.csv", header=T)
+```
+
+## Plotting the data together with the linear regression
+
+```{r Plotting the MT data together with the linear regression}
+ggplot(meanMTdf, aes(ID, MT)) +
+  geom_point() +
+  geom_smooth(method='lm')
+```
+## Linear modelling
+
+```{r linear modeling of MT data}
+model <- lm(MT~ID, data = meanMTdf)
+summary(model)
+```
+From the replication of the experiment we can see that the ID doesn't seem to have an impact on the movement time, which correspond to the finding of Celine Coutrix Additionally, the R²=0.44 i found here is the same as the R² = 0.044 reported by the [experimental software](http://ergo.human.cornell.edu/FittsLaw/FittsLaw.html). However the a and b seem to differ, in my result i find a MT = 904.22+27.17*log2(A/W+1) vs MT = 892.715 + 29.187log(A/W + 1) provided by the webpage
+
+
+## Loading data raw data given by Cornell University Ergonomics website
+```{r loading raw data into a dataframe}
+rawdf <- read.csv("../data/raw_data.csv", header=T)
+```
+
+## Applying Fitt's law formula to get the ID
+```{r applying MacKenzie formula}
+rawdf$newID <- (log2((rawdf$A / rawdf$W) +1))
+```
+
+## Computing the mean MT for each unique combination of A, W, and ID
+```{r computing mean time}
+newmeanMTdf <- rawdf %>%
+  group_by(A, W, newID) %>%
+  summarise(mean_MT = mean(MT), .groups = "drop")
+```
+
+
+## Plotting the data together with the linear regression
+
+```{r Plotting the raw data together with the linear regression}
+ggplot(newmeanMTdf, aes(newID, mean_MT)) +
+  geom_point() +
+  geom_smooth(method='lm')
+```
+
+## Linear modelling
+
+```{r linear modeling of processed raw data}
+model <- lm(mean_MT~newID, data = newmeanMTdf)
+summary(model)
+```
+
+By using this analysis, we get the same MT = 982.71+29.19 * log2(A/W+1) with R2 = 0.44. The ID doesn't seem to have an impact on the mean time movement, but that can be explained by the fact that the task was too difficult to begin with. The width of the target of 1, 2 and 4 pixel were too small to be comfortably reached by the participant. The data seem to suggest this idea, first of all 32 error out of 45 observation were made which eliminate around 71% of total observation.

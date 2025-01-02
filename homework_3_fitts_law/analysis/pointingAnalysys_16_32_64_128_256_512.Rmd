@@ -1,0 +1,79 @@
+---
+title: "PointingXP"
+author: "Fouad Gasmi"
+date: "02/01/2025"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Loading libraries
+
+```{r loading libraries}
+library(ggplot2)
+library(dplyr)
+
+```
+
+## Loading data pre processed by Cornell University Ergonomics website
+
+```{r loading MT data into a dataframe}
+meanMTdf <- read.csv("../data/mt_data2.csv", header=T)
+
+```
+
+## Plotting the data together with the linear regression
+
+```{r Plotting the MT data together with the linear regression}
+ggplot(meanMTdf, aes(ID, MT)) +
+  geom_point() +
+  geom_smooth(method='lm')
+```
+## Linear modelling
+
+```{r linear modeling of MT data}
+model <- lm(MT~ID, data = meanMTdf)
+summary(model)
+```
+
+In this experiment we can see that the ID seems to have an impact on the movement time. However the R²=0.783 find here is different from the R²=0.884 reported by the [experimental software](http://ergo.human.cornell.edu/FittsLaw/FittsLaw.html). The result provided by the website were : MT =132.970 + 180.536log(A/W + 1) with RSquare = 0.884
+
+
+## Loading data raw data given by Cornell University Ergonomics website
+```{r loading raw data into a dataframe}
+rawdf <- read.csv("../data/raw_data2.csv", header=T)
+```
+
+## Applying Fitt's law formula to get the ID
+```{r applying MacKenzie formula}
+rawdf$newID <- (log2((rawdf$A / rawdf$W) +1))
+```
+
+## Computing the mean MT for each unique combination of A, W, and ID
+```{r computing mean time}
+newmeanMTdf <- rawdf %>%
+  group_by(A, W, newID) %>%
+  summarise(mean_MT = mean(MT), .groups = "drop")
+```
+
+
+## Plotting the data together with the linear regression
+
+```{r Plotting the raw data together with the linear regression}
+ggplot(newmeanMTdf, aes(newID, mean_MT)) +
+  geom_point() +
+  geom_smooth(method='lm')
+```
+
+## Linear modelling
+
+```{r linear modeling of processed raw data}
+model <- lm(mean_MT~newID, data = newmeanMTdf)
+summary(model)
+```
+And now by using the raw data and applying the different operation, we get the same result provided by the webpage
+MT = 132.970 + 180.536log(A/W + 1), RSquare = 0.884.
+
+
