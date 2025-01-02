@@ -83,6 +83,6 @@ This analysis is available in the [analysis folder](./analysis/) (R markdown fil
 - `pointingAnalysis1`, analysis of experiment 1
 - `pointingAnalysis2`, analysis of experiment 2
 - `coutrixPointingAnalysis`, analysis of Coutrix's experiment
-
+HTML files containing the results of the R Markdown data analyses have been included, so readers do not need to run the scripts themselves.
 
 
