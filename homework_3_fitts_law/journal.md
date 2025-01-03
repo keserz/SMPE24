@@ -60,6 +60,8 @@ The experiment was performed on the same [experimental software](http://ergo.hum
 
 - The participant was instructed  to click on the blue target as fast as possible
 
+- The participant has corrected eye-sight
+
 #### Independent variables
 - Width of the target:
     - First experiment : 1, 2, 4 pixels
