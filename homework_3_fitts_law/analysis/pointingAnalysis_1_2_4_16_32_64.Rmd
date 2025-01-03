@@ -71,4 +71,4 @@ model <- lm(mean_MT~newID, data = newmeanMTdf)
 summary(model)
 ```
 
-By using this analysis, we get the same MT = 982.71+29.19 * log2(A/W+1) with R2 = 0.44. The ID doesn't seem to have an impact on the mean time movement, but that can be explained by the fact that the task was too difficult to begin with. The width of the target of 1, 2 and 4 pixel were too small to be comfortably reached by the participant. The data seem to suggest this idea, first of all 32 error out of 45 observation were made which eliminate around 71% of total observation.
+By using this analysis, we get the same MT = 982.71+29.19 * log2(A/W+1) with R2 = 0.44. The ID doesn't seem to have an impact on the mean time movement, but that can be explained by the fact that the task was too difficult to begin with. The width of the target of 1, 2 and 4 pixel were too small to be comfortably reached by the participant. The data seem to suggest this idea.
