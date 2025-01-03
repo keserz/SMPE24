@@ -25,12 +25,15 @@ In my project, I aim to replicate the experiment conducted by Céline Coutrix, w
 ### data/
 This folder contains 2 experiment performed by the same participant on the [pointing experiment from Ergonomics Web at Cornell University](http://ergo.human.cornell.edu/FittsLaw/FittsLaw.html). The date of the experiment was the 2nd january 2025.
 #### First experiment
+which is an attempt to reproduce Coutrix's data
 - `raw_data`, i.e. the raw data  as returned from the experimental software. 
 - `mt_data`, i.e. the processed mean movement times as returned from the experimental software.
 #### Second experiment
+run with the default setting of the experimental webpage
 - `raw_data2`, i.e. the raw data  as returned from the experimental software. 
 - `mt_data2`, i.e. the processed mean movement times as returned from the experimental software.
 #### Coutrix experiment
+data collected in Coutrix's experiment
 - `20211117_1527_RawData`, i.e. the raw data  as returned from the experimental software. 
 - `20211117_1527_MeanMT`, i.e. the processed mean movement times as returned from the experimental software. 
 
@@ -52,6 +55,10 @@ The experiment was performed on the same [experimental software](http://ergo.hum
 - The model of the computer mouse was a [Logitech 502X PLUS](https://www.logitechg.com/fr-fr/products/gaming-mice/g502-x-plus-wireless-lightforce.html?srsltid=AfmBOopUFiXgl7CPpopGOrWxwxIFE9uOmLBkcRoQCGT9pruOHUWPeZRi) set to 2400 DPI
 
 - The monitor on which the experiment was displayed was an IPS BENQ GW2765 with a resolution of 2560x1440 pixels, 4ms response time and a refresh rate of 60hz
+
+- The height of all target were 1230 pixels
+
+- The participant was instructed  to click on the blue target as fast as possible
 
 #### Independent variables
 - Width of the target:
