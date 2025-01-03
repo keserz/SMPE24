@@ -79,10 +79,8 @@ The webpage gave the following results:
 - The [mean movement time table](./data/mt_data2.csv) is provided in the [data folder](./data/)
 
 #### Data analysis
-This analysis is available in the [analysis folder](./analysis/) (R markdown file).
-- `pointingAnalysis1`, analysis of experiment 1
-- `pointingAnalysis2`, analysis of experiment 2
-- `coutrixPointingAnalysis`, analysis of Coutrix's experiment
-HTML files containing the results of the R Markdown data analyses have been included, so readers do not need to run the scripts themselves.
-
+This analysis is available in the [analysis folder](./analysis/) (markdown file).
+- `pointingAnalysis1`,  [analysis of experiment 1](./analysis/pointingAnalysis_1_2_4_16_32_64.md.csv)
+- `pointingAnalysis2`,  [analysis of experiment 2](./analysis/pointingAnalysys_16_32_64_128_256_512.md.csv)
+- `coutrixPointingAnalysis`,  [analysis of Coutrix's experiment](./analysis/coutrixPointAnalysis.md.csv)
 
