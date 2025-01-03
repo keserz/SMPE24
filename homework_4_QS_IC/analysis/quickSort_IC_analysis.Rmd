@@ -6,7 +6,7 @@ output:
 date: "2025-01-02"
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=TRUE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
