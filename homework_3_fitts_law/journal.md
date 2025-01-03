@@ -80,7 +80,7 @@ The webpage gave the following results:
 
 #### Data analysis
 This analysis is available in the [analysis folder](./analysis/) (markdown file).
-- `pointingAnalysis1`,  [analysis of experiment 1](./analysis/pointingAnalysis_1_2_4_16_32_64.md.csv)
-- `pointingAnalysis2`,  [analysis of experiment 2](./analysis/pointingAnalysys_16_32_64_128_256_512.md.csv)
-- `coutrixPointingAnalysis`,  [analysis of Coutrix's experiment](./analysis/coutrixPointAnalysis.md.csv)
+- `pointingAnalysis1`,  [analysis of experiment 1](./analysis/pointingAnalysis_1_2_4_16_32_64.md)
+- `pointingAnalysis2`,  [analysis of experiment 2](./analysis/pointingAnalysys_16_32_64_128_256_512.md)
+- `coutrixPointingAnalysis`,  [analysis of Coutrix's experiment](./analysis/coutrixPointAnalysis.md)
 
