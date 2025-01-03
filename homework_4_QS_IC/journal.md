@@ -15,4 +15,4 @@ Below is the plot representing the **95% confidence intervals**:
 
 ## R Markdown
 
-For detailed code and further analysis, refer to the corresponding [R Markdown file](https://github.com/keserz/SMPE24/blob/main/homework_4_QS_IC/analysis/quickSort_IC_analysis.Rmd).
+For detailed code and further analysis, refer to the corresponding [R Markdown file](https://github.com/keserz/SMPE24/blob/main/homework_4_QS_IC/analysis/quickSort_IC_analysis.md).
