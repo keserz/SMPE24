@@ -30,6 +30,6 @@
 
 
 ## Improvement
-- an improved analysis can be found [here](https://github.com/keserz/SMPE24/blob/main/homework_5_challenger/analysis/analysis_challenger_.md)
+- an improved analysis can be found [here](https://github.com/keserz/SMPE24/blob/main/homework_5_challenger/analysis/analysis_challenger.md)
 
 
