@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+padding-top: 0px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="analysis_challenger">analysis_challenger</h1>
+<p>2025-01-04</p>
+<h2 id="loading-libraries">Loading libraries</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<h2 id="loading-data">Loading data</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;../data/shuttle.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<h3 id="adding-frequency-of-o-rings-failure">Adding frequency of O-rings
+failure</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>data<span class="sc">$</span>Frequency <span class="ot">&lt;-</span> data<span class="sc">$</span>Malfunction <span class="sc">/</span> data<span class="sc">$</span>Count</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>datarm <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  <span class="fu">filter</span>(Malfunction <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code></pre></div>
+<h3 id="scatter-plot-of-temperature-vs-frequency-of-failure">Scatter
+plot of Temperature vs Frequency of failure</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Add a new column to identify the dataset</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>data<span class="sc">$</span>Source <span class="ot">&lt;-</span> <span class="st">&quot;All Data&quot;</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>datarm<span class="sc">$</span>Source <span class="ot">&lt;-</span> <span class="st">&quot;Filtered Data&quot;</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co"># Combine the two datasets into one</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(data, datarm)</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co"># Create the plot with facet_wrap to display both datasets side by side</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="fu">ggplot</span>(combined_data, <span class="fu">aes</span>(<span class="at">x =</span> Temperature, <span class="at">y =</span> Frequency)) <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Temperature vs O-ring Failure Frequency&quot;</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Temperature (°F)&quot;</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Failure Frequency&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Source, <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>)  <span class="co"># Display two panels with separate y-axis for each dataset</span></span></code></pre></div>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqAAAAHgCAMAAABNUi8GAAABj1BMVEUAAAAAADoAAGYAOjoAOmYAOpAAZpAAZrYZGUgZGXEZSHEZSJcZcboaGho6AAA6ADo6AGY6OgA6Ojo6OmY6ZmY6ZpA6ZrY6kLY6kNtIGRlIGUhIGXFISHFISJdIl91NTU1NTW5NTY5NbqtNjshmAABmADpmAGZmOgBmOmZmOpBmZmZmkJBmkLZmkNtmtpBmtrZmtttmtv9uTU1uTW5uTY5ubqtuq+RxGRlxGUhxGXFxSBlxSJdxcXFxuv+OTU2OTW6OTY6ObquOyP+QOgCQZgCQZjqQZmaQkDqQkGaQkLaQtpCQttuQ27aQ2/+XSBmXSEiXSHGXupeX3bqX3f+rbk2rbm6rbo6rjk2ryKur5P+2ZgC2kDq2kGa2tpC2ttu229u22/+2/9u2//+6cRm6/7q6///Ijk3I///bkDrbkGbbtmbbtpDb27bb29vb/7bb/9vb///dl0jd///kq27k///r6+v/tmb/unH/yI7/25D/27b/29v/3Zf/5Kv//7b//7r//8j//9v//93//+T///86SDhcAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAZuElEQVR4nO2di38c1XmGR2Cq0GIltIGoNwRGlF7SBhlwmrQYKjXNhYi0xWlrpSnUFGtL2sRgIywXCcneP7xz5rJz3dXOzr7ffPv6/X4JHu08886Zs4/OXLQ6isYqleOKhm6ASjWrJKjKdUlQleuSoCrXJUFVrkuCqlyXBFW5Lgmqcl3dBT3djrJ64lavXR//aY/tz//92Sh68tt36i/vPVV/qVSjloaHLWZvNX1bFb4GFHTUY/sHr6ZNuPRh9XUJylaLneLneUcvrB6Cnu9Fz8VqPvhB1Kkd0/Y4l6Ayc5DqK2gYyn4vduV4Y/OTjbW/HB9tRM/diUfZzXjh0n6ZON9bH0VPfDj+JD43x2DsWBRtpkHxqsnqHE8qteJ0O179g3ir1/L9j6LN2kK2/QfpePjLZ8Mu4vpkI1r7dpxejksra8ZkBL2gJaVtm+vjvVz6z2TLPKN82JXWhD45inaSo9ocqy6snoIeb4TT3tp+vPDNeHHtJ+Hr9bjzw1fh9YI433tyIx7wslPlTlPQZPUEz+LDW3mU0VHyxia7z2053c6/U9Ltf5OoFuVwtrMWQfNmtAra0pKKoLX1SdalVyuClg570pqj7KXwDRd/NYlWzah+gp7vhVHtVxvr4Q15bfxJrFy89NSd+Dp1/c75L6L1EhG/U5uJW8l4u56+5WUt0tU5XtrPwRO3jjeev5NuFSp9h5M6yL3Jt08EXb8TWxO+T9beHT/YKwSdXEYWzWgTtKUllW2r64u9lDNKh521Jn5tP+6izazRB0u4SnoMqp+g8Yk9/DMKBq1n41lYlw1siVk5MRn2/veX/7ARtQgaVhd4uqNRNuAcbzz5Fx9Mdt8uaFhKVQtLgTlKLgCOWyQrmtEmaGtLynLfqh56vpcio37Y6THk5/RwjtcZfr7qJ+hRdmu7tp/0firOQRA0cSLWqyCybdJzX5ugYanA0x2F2OSS7SC8+lx2RVgVNFFncrFQVm2UxJy3XYNOmtEmaFtLyqf46vr0kvK8cg1aP+xU2uwKJf3m0Rl+rrIWND75f/PH//Hr7TkFDa+mg+SvXi2e8VSvQRcRtGjGEIKGbyud4eervqf4vM/rgqbvSjj/7VS2Sb+eXIOmp+jT7fXK6lKN1n46GS7/5+/zu6TWu/imoI1T/ESyohmTLS5oSV3Q2qGnx35QnM6rh1067Yc6ir6jM/x81fsm6d1xfIOQXYiVBI2+NblJyoj8fY1vGR68Gp5fJuPbQZQ8cSpGnxzP9nS88efpDfC34qvbXxQDa+M5aJugjZukUmzejELQ2S2pC1o+sPiGKNmynFE97OzGaX98nH3r/q7O8PNVz8dM2alsszGCPrmRnZEnRP5OpV8HQcOrR9VHNAU+2VOU3vzkW6V12vhJUpug0x8zFc2YbHFBS+qCltanj4+eXR8XGc3DnryWDK0j/URqzur7oP44NuXJ15qn+PXwxP7DMpFtEx5gX3o3nAtjyeJh7L9j7jeT67cCz2uU6pU8qH++uGxr/Cy+VdDkQf1fbbfcJE2aUWwxuyUNQUvr46VLHyT7yzPqh120Jg0sLjtUswvzaabSbfbwZfNAp7gVm6eOop2LIdWYXNDjjd+Kr1wPTGToJOiDV3UPP2dRC1q/csXua+5DDp8H0z38nEUtaOPKFbmr+QWNv2+eRzaFqvSJepXrkqAq1yVBVa5LgqpclwRVuS4JqnJdElTluiSoynVJUJXrkqAq1yVBVa5LgqpclwRVuS4JqnJdElTlulZM0K/++v3x+Ms//Dj+X/zVl79/Oa63JmvTV1WNSjvqhbTjpvbSw/feGrvr1BUT9Iu/faEsaPjvV9+ddKYEnVJFx8whqK9OXS1BH/7sn//ms5qg4y//+LPk2/6tr757+emPk6Wh2+mtMsmSjvuv0EtJV42//KPv54uxkpd/+/sTQf106moJGnfbR2/VBY1P++HMn76aLQ3dUGdVFjTpu49eGH/6TGxgbF26GP754nIhqJtOXS1BP4178Zm6oA9/9n5Y99X38pNXvDRkIx1Wcl35TCFoMC7rr2wx9FnpFO+nU1dK0Ifvxf389MfNETQeALIV2dLQLXVW9RE0Pm9fvvy19xNBi8XxR5UR1EenrpSg4cIo7sWaoF/8zmfhmj7v+rd0im9UQ9Dv5V/nI2N9BHXTqSsl6KehA794pnkXHxa+/IP3sxXx0tAtdVZt16CxgungmCzWrkH9dOoqCfrwH9OTzz81n4N+ejncgz587+mP06WBW+qtKoKGXopP7F97P3cxLIbLp+wu3lenrpKgqsewJKjKdUlQleuSoCrXJUFVrkuCqlzX8gX93BHuqS3QbF5cgprhyGxeXIKa4chsXlyCmuHIbF5cgprhyGxeXIKa4chsXlyCmuHIbF5cgprhyGxeXIKa4chsXlyCmuHIbF5cgprhyGxeXIKa4chsXlyCmuHIbF5cgprhyGxeXIKa4chsXryfoFHU3N7TwXej245meendduypFwftxl6CJn+Nvdv+GuVH0NajWV5buu3YUy8O2o0SdFISdCm4BEXREnQpuCdBdQ26nHL+bb6616AL7M8W99QWaDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzfDaxqqZlfeTBDXDkdm8uAQ1w5HZvLgENcOR2by4BDXDkdm8uAQ1w5HZvLgENcOR2by4BDXDkdm8uAQ1w5HZvLgENcOR2by4BDXDkdm8uAQ1w5HZvLgENcOR2by4BDXDkdm8uAQ1w5HZvPgMQc+ub125lyzd39p66XA5+7PFPbUFms2LTxf00Y3d8d2Xw9LJG4fZUv/92eKe2gLN5sWnC3r2zmGiZlrFUr/92eKe2gLN5sWnC3ry5r3x2ds3s6+KEXToj1q7r25vz0Lv2mOETxf0/pVC0JOrL96cCnbany3uqS3QbF583hG0WOq3P1vcU1ug2bz4vNeg49u7S9mfLe6pLdBsXnzWXfy17MqzfLLvuz9b3FNboNm8+IXPQZNnTFtbugbtjSOzeXH9JMkMR2bz4hLUDEdm8+IS1AxHZvPiEtQMR2bz4hLUDEdm8+IS1AxHZvPiEtQMR2bz4hLUDEdm8+IS1AxHZvPiEtQMR2bz4hLUDEdm8+IS1AxHZvPiEtQMR2bz4hLUDEdm8+IS1AxHZvPiEtQMR2bz4hLUDEdm8+IS1AxHZvPiEtQMR2bz4hLUDEdm8+IS1AxHZvPiEtQMR2bz4hLUDEdm8+IS1AxHZvPiEtQMR2bz4hIUhjdmqC5esG7KCuMSFIU3ZqguXrBuyirjEhSFN2aork0XaNiUVcYlKApvzFBdfWHoeaC9V96NEhSFN2ao7jSLpade1AgKw/2MoPFS9QXLpqwyLkFReGOGal2DLoJLUBTemKG6eMG6KauMS1AY3pihWs9BF8AlqBmOzObFJagZjszmxSWoGY7M5sUlqBmOzObFJagZjszmxSWoGY7M5sUlqBmOzObFJagZjszmxSWoGY7M5sUlqBmOzObFJagZjszmxbsLOvQnWd1X5x5t7WXhaWkENcOR2by4BDXDkdm8uAQ1w5HZvLgENcOR2by4BDXDkdm8uAQ1w5HZvLgENcOR2by4BDXDkdm8uAQ1w5HZvLgENcOR2by4BDXDkdm8uAQ1w5HZvLgENcOR2by4BDXDkdm8uAQ1w5HZvLgENcOR2by4BDXDkdm8uAQ1w5HZvLgENcOR2by4BDXDkdm8uAQ1w5HZvLgENcOR2by4BDXDkdm8uAQ1w5HZvLgENcOR2by4BDXDkdm8uAQ1w5HZvHhZ0NPttf1u2d33Z4t7ags0mxevjqAHUfTUnW7xHfdni3tqCzSbF6+f4k+3o2iz2w467c8W99QWaDYv3rwGDYo+cavbPubfny3uqS3QbF68LugoitbjU32PE72ng/fUFmg2L14R9HwvinbCwlGPIdTTwXtqCzSbF6/exfc5tc+3P1vcU1ug2by4noOa4bWNVTMr76faKX4z/v96n373JYWntkCzefGKoAfBzb6Gejp4T22BZvPi1WvQ3ndIF+7PFvfUFmg2Ly5BzXBkNi9eOcWPgpqn2/pJEgRHZvPi1bv4oyjq+5NOVwfvqS3QbF5cj5nMcGQ2Ly5BzXBkNi9eEfR4I5zie31UxNfBe2oLNJsXLwva+xn9HPuzxT21BZrNi7c8ZupZng7eU1ug2bx4dQSVoEAcmc2LV65Bez6in2d/trintkCzefHqKT4q3ySdXd+6ci9ZOrm6tbU7SPN64p7aAs3mxac/Znp0Y3d89+WwdPb2zfHJ6zeXsj9b3FNboNm8+HRBz945HJ+8cRgv3Q+a3p53CPV08J7aAs3mxauCjqJoZ5T9PtLJm/eSsTOtYmnoT7K6r25vz0Lv2mOEVz8P+tSvt3fyp6H3r5QEfXTj2iDN64l7ags0mxevPQcNj0Kze/nyCHp2fW4/XR28p7ZAs3nx6YIW16DxXfzc9/C+Dt5TW6DZvHj186DhFJ9/HjSc1dO7+E5+ujp4T22BZvPiMz4Pmj4HjQfRu1uhdBffE0dm8+L6uJ0ZjszmxSWoGY7M5sVn/KhzwfJ08J7aAs3mxVtmt3ul3yy2ng7eU1ug2bx4yyn+qN8ctp4O3lNboNm8eJugOsVDcGQ2L94iaJ/JQS/cny3uqS3QbF685Sap519S8HTwntoCzebF9ZjJDEdm8+IS1AxHZvPibc9B+z0K9XTwntoCzebFq780Fy4/NXkYCEdm8+KaftEMR2bz4hLUDEdm8+KaH9QMR2bz4o1fmsv+UtLi5engPbUFms2L6zGTGY7M5sUlqBmOzObFp/9e/KLl6eA9tQWazYtP/734RcvTwXtqCzSbF5/+a8eLlqeD99QWaDYvLkHNcGQ2Lz799+IXLU8H76kt0GxeXH8nyQxHZvPiesxkhiOzeXHNUQ/DGzNUhxlaXjocoikrjFv8lY/4sqG2MBNvbjcfPl/ArFpqzzZnqJ57DuBlN2WV8dpNUr9n9O37Sz4BXVmYiTe3mw+fM2BWLbVnGzNUP/r5vLOoL7spq4wbzCzymAramKE6PuWXpmAbeh5o75X3k8FN0mMqaGOG6nCWn3sUXaExDotb3MU/nteg7TNUz3sdukIKYfHJO7icO6QL92eLD9mW9hmqJWhHvCroMv7UnKeDH7ItjRmqwzn/0b/oMVM3XILC8MYM1fG/L67in0OToDDcU1ug2by4BDXDkdm8uAQ1w5HZvHhJ0GXMe3Ph/mxxT22BZvPi+jSTGY7M5sUlqBmOzObFJagZjszmxSWoGY7M5sUlqBmOzObFJagZjszmxTWziBmOzObFNbOIGY7M5sW7T9ww9Eet3Ve3t2daLwtPSzOLmOHIbF5cM4uY4chsXlwzi5jhyGxeXI+ZzHBkNi+umUXMcGQ2L24xs8hwuKe2QLN5cYOZRQbEPbUFms2LG8wsMiDuqS3QbF5cN0lmODKbF5egZjgymxfXKd4MR2bz4s0R9PSV/W476LQ/W9xTW6DZvHjLKf6o3728p4P31BZoNi/eJqhO8RAcmc2Ltwh6oBEUgiOzefGWm6Q1XYNCcGQ2L67HTGY4MpsXl6BmODKbF9fcTGY4MpsX1whqhiOzeXEJaoYjs3nx8vyg+lEnFEdm8+IaQc1wZDYvLkHNcGQ2L14R9HhDp3gcjszmxau/NLd5vrfT9zeTPB28p7ZAs3nx+i/NHWzq00wgHJnNi9cFHa3r00wgHJnNi1dnt0vs7Pm7nZ4O3lNboNm8eEXQ+CJ0fKBPM4FwZDYvrsdMZjgymxeXoGY4MpsX19+LN8OR2by4/lanGV7bWDWz8n6SoGY4MpsXl6BmODKbF5egZjgymxeXoGY4MpsX1+8kmeHIbF5cz0HNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8+Q9Cz61tX7mXLJ28cLmd/trintkCzefHpgj66sTu++3K6fH/rJQnaF0dm8+LTBT175zAfOG+/+G8aQXvjyGxefLqgJ2/eG5+9fTP7ohB06E+yuq9ub89C79pjhE8X9P6VdkH77c8W99QWaDYv3n0E7bc/W9xTW6DZvPhc16ASdBk4MpsXn3UXf21yFy9Bl4Ajs3nxC5+DpmpK0P44MpsX10+SzHBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkFheDGF+snVra3d6pzqtk1ZYVyCovBiCvUwieXJ6zfLc6rbNmWVcQmKwovpK+8HK2/vVuazNG3KKuMSFIVXJgAOS9UXhp6o3Hvl3ShBUXhlCvUw2WrlBdOmrDIuQVF4ecA8u36tPqRaNmWVcQmKwkuXnCdXd8e1OdVNm7LKuARF4cUU6qmf1TnVTZuyyrgEheGTKdTvboXa1XPQRXAJaoYjs3lxCWqGI7N5cQlqhiOzeXEJaoYjs3lxCWqGI7N5cQlqhiOzeXEJaoYjs3lxCWqGI7N5cQlqhiOzeXEJaoYjs3lxCWqGI7N58e6CDv1JVvfVuUdbe1l4WhpBzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzXBkNi8uQc1wZDYvLkHNcGQ2Ly5BzfDaxqqZlfeTBDXDkdm8uAQ1w5HZvLgENcOR2by4BDXDkdm8uAQ1w5HZvLgENcOR2by4BDXDkdm8uAQ1w5HZvLgENcOR2by4BDXDkdm8uAQ1w5HZvLgENcOR2by4BDXDkdm8uAQ1w5HZvPgMQc+ub125V1vqvT9b3FNboNm8+HRBH93YHd99ubrUf3/LwqMoqi20vFSsm1QLvvC6z5srl1bNbpnVulm92Na4bp3e9fCMBD1753B88sZhZan//paER1HWa5OFlpeKdZNqwRdf93lj5fKq0S2zWjerF1sb16nTOx+ekaAnb94bn719s7KU5HmopNMqCy0vFeua27WsXHRd/aVub8+875oErdf9K7mWxVL//S0J1wh6Ad6y3Vz4vAmzauARtN/+loVP+qzovOZLLR3bgi+8Tteg7aVrUB/huou3wGfdxV+b3MVfc3cX7yBcglrgFz4HDUOnnoMuA0dm8+L6SZIZjszmxSWoGY7M5sUlqBmOzObFJagZjszmxSWoGY7M5sUlqBmOzObFJagZjszmxSWoGY7M5sUlqBmOzObFJagZjszmxSWoGY7M5sWXL6hKtcSSoCrXJUFVrkuCqlyXBFW5Lgmqcl0SVOW6JKjKdUlQlesaUNBHN7ZevDnu9ht589bdrVC7mPDx+OTq1kuHoKZ3LGQveujGAQW9vRvmLOk2M1mXwoWHWSzuIpveodC9OHQ3DidomA5i3HVWiC758eGDwpOpVt45hDW9Q6F7cfBuHE7Qkzf/NZycus2r06HCNyUoPPvWhzW9Q6F7cfBuHFDQq7vhyLvNTDZ/JZmw8OSqCZXepcC9OHw3DjmCJu1Cfe+Hw0Z965+8fnN8/6VDHyMotBeH78YBr0H/LmkX6urp9rUx7NIs+553cQ2K7cXhu3HYu/j4m6fbzGRz16Ofh29JUHj2rQ9K71bQXnTQjQMKGl+B4B4mZucM0AO8+1vAh4/dCtqLDrpRP0lSuS4JqnJdElTluiSoynVJUJXrkqAq1yVB56/zvSit9QU2fvDh7Oid8VEU7Uz2sXP6yv6CzeQqCdqtjr++mDcXbDdaH5/+2Z3TP7l1vreZvXT01J2F9kRWErRbYQQNw2Vd0DCoqiRox8pEC2fiJ27FX/1kI4o2jzfC2fn46z+KojDs5Su/8cP4n7AuJTaTbeP/pCsyKqlR2Cw7xeeCaghNSoJ2q1TQ8731xKrjjViiUbByFFQM1q2XVsb/nm7H42BYGW83ETSsyKlxEjexsrS46GDNVRK0W6XWHIWhL3bveCPWL/1P8C79t7Ly/+6kG1UF3SkiQmj2T6jsJmmz+upjXBK0W6WCjtJb7clJe+JgsKqyMjlzR2tVQcO/ORWQiqBtg+ljXBK0W2WCZpeH7YKWV55ur+03RtBE0NIVpgSdXhK0W2Wn+LX94qvKmfv4G7cqK5M7naOWETSnQrULqlN8KAnarfKbpNi7TLuSoPlNUmll8PB4Y20/2Ha6vRmvzFbkVJJ6oJukaSVBu1XpMdPafv0U/6P0h0zlleODePmnsZ0H8arwsOk7r+znkidUUsUTpZKgIz1mGkvQJVaPEa/t55p6UJ+UBF1a9Tklj5o/3tdz+qQk6NKqj6DN4VIfFklLgqpclwRVuS4JqnJdElTluiSoynVJUJXrkqAq1/X/ZLE4jk/xOSIAAAAASUVORK5CYII=" /><!-- --></p>
+<p>From these graph we can see that for the non filtered data there seem
+to be a trend regarding temperature which is imperceptible with the
+filtered data.</p>
+<h2 id="logistic-regression-only-with-temperature">Logistic regression
+only with temperature</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>logmodel <span class="ot">&lt;-</span> <span class="fu">glm</span>(Frequency <span class="sc">~</span> Temperature, </span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>                <span class="at">data =</span> data, </span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>                <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>))</span></code></pre></div>
+<pre><code>## Warning in eval(family$initialize): nombre de succès non entier dans un glm binomial !</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>logmodelrm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Frequency <span class="sc">~</span> Temperature, </span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>                <span class="at">data =</span> datarm, </span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>                <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>))</span></code></pre></div>
+<pre><code>## Warning in eval(family$initialize): nombre de succès non entier dans un glm binomial !</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">summary</span>(logmodel)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = Frequency ~ Temperature, family = binomial(link = &quot;logit&quot;), 
+##     data = data)
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(&gt;|z|)
+## (Intercept)    5.085      7.477    0.68     0.50
+## Temperature   -0.116      0.115   -1.00     0.32
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 4.0384  on 22  degrees of freedom
+## Residual deviance: 3.0144  on 21  degrees of freedom
+## AIC: 7.203
+## 
+## Number of Fisher Scoring iterations: 6</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">summary</span>(logmodelrm)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = Frequency ~ Temperature, family = binomial(link = &quot;logit&quot;), 
+##     data = datarm)
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(&gt;|z|)
+## (Intercept) -1.38953    7.82796   -0.18     0.86
+## Temperature  0.00142    0.12192    0.01     0.99
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 0.22245  on 6  degrees of freedom
+## Residual deviance: 0.22231  on 5  degrees of freedom
+## AIC: 7.376
+## 
+## Number of Fisher Scoring iterations: 4</code></pre>
+<p>In either of these data set (filtered vs unfiltered) temperature
+doesn’t show significance with a P value = 0.5 for the unfiltered data
+and 0.86 for the filtered data, at first this could suggest that
+removing data doesn’t have an impact in the significance of the
+temperature. However in this analysis the pressure which is part of this
+dataset has not been taken into account</p>
+<h2 id="logistic-regression-with-temperature-and-pressure">Logistic
+regression with temperature and pressure</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>model_2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="fu">cbind</span>(Malfunction, Count <span class="sc">-</span> Malfunction) <span class="sc">~</span> Temperature <span class="sc">+</span> Pressure, </span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>               <span class="at">data =</span> data, </span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>               <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>model_2rm <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="fu">cbind</span>(Malfunction, Count <span class="sc">-</span> Malfunction) <span class="sc">~</span> Temperature <span class="sc">+</span> Pressure, </span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>               <span class="at">data =</span> datarm, </span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>               <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="fu">summary</span>(model_2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = cbind(Malfunction, Count - Malfunction) ~ Temperature + 
+##     Pressure, family = binomial(link = &quot;logit&quot;), data = data)
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(&gt;|z|)  
+## (Intercept)  2.52019    3.48678    0.72    0.470  
+## Temperature -0.09830    0.04489   -2.19    0.029 *
+## Pressure     0.00848    0.00768    1.11    0.269  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 24.230  on 22  degrees of freedom
+## Residual deviance: 16.546  on 20  degrees of freedom
+## AIC: 36.11
+## 
+## Number of Fisher Scoring iterations: 5</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">summary</span>(model_2rm)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = cbind(Malfunction, Count - Malfunction) ~ Temperature + 
+##     Pressure, family = binomial(link = &quot;logit&quot;), data = datarm)
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(&gt;|z|)
+## (Intercept) -2.25231    4.03615   -0.56     0.58
+## Temperature  0.00724    0.05196    0.14     0.89
+## Pressure     0.00273    0.00816    0.33     0.74
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 1.3347  on 6  degrees of freedom
+## Residual deviance: 1.2162  on 4  degrees of freedom
+## AIC: 20.78
+## 
+## Number of Fisher Scoring iterations: 4</code></pre>
+<p>When we apply the logistic regression considering temperature and
+pressure, the analysis reveals that temperature has a significant impact
+on the probability of O-ring failure with the full dataset with a p
+value = 0.029. The negative coefficient suggest that as temperature
+increases, the probability of failure decreases.</p>
+<p>However when the same model is applied to the filtered dataset,
+temperature doesn’t show any significance. This shift suggest that
+removing datas reduced the model’s ability to capture meaningfull
+information leading to a loss of critical information.</p>
+<p>So far we’ve tried to include temperature and pressure and since the
+original dataset doesn’t include any other variable, the only thing left
+we could explore is the interaction between these two variables.</p>
+<h2 id="logistic-regression-of-temperature--pressure">logistic
+regression of temperature * pressure</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>model_3 <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="fu">cbind</span>(Malfunction, Count <span class="sc">-</span> Malfunction) <span class="sc">~</span> Temperature <span class="sc">*</span> Pressure, </span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>               <span class="at">data =</span> data, </span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>               <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>model_3rm <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="fu">cbind</span>(Malfunction, Count <span class="sc">-</span> Malfunction) <span class="sc">~</span> Temperature <span class="sc">*</span> Pressure, </span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>               <span class="at">data =</span> datarm, </span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>               <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a><span class="fu">summary</span>(model_3)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = cbind(Malfunction, Count - Malfunction) ~ Temperature * 
+##     Pressure, family = binomial(link = &quot;logit&quot;), data = data)
+## 
+## Coefficients:
+##                       Estimate Std. Error z value Pr(&gt;|z|)
+## (Intercept)          -21.76555   46.28561   -0.47     0.64
+## Temperature            0.25246    0.66299    0.38     0.70
+## Pressure               0.13086    0.23264    0.56     0.57
+## Temperature:Pressure  -0.00177    0.00334   -0.53     0.60
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 24.230  on 22  degrees of freedom
+## Residual deviance: 16.257  on 19  degrees of freedom
+## AIC: 37.82
+## 
+## Number of Fisher Scoring iterations: 6</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">summary</span>(model_3rm)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = cbind(Malfunction, Count - Malfunction) ~ Temperature * 
+##     Pressure, family = binomial(link = &quot;logit&quot;), data = datarm)
+## 
+## Coefficients: (1 not defined because of singularities)
+##                      Estimate Std. Error z value Pr(&gt;|z|)
+## (Intercept)          -2.25231    4.03615   -0.56     0.58
+## Temperature           0.00724    0.05196    0.14     0.89
+## Pressure              0.00273    0.00816    0.33     0.74
+## Temperature:Pressure       NA         NA      NA       NA
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 1.3347  on 6  degrees of freedom
+## Residual deviance: 1.2162  on 4  degrees of freedom
+## AIC: 20.78
+## 
+## Number of Fisher Scoring iterations: 4</code></pre>
+<p>In the full dataset, neither temperature nor pressure shows
+significance toward the probability of O-ring failure, nor does the
+interaction between these two variables. In the filtered dataset, the
+situation becomes even more uncertain, as the model couldn’t estimate
+the interaction term, likely due to the small sample size. Overall,
+incorporating the interaction between temperature and pressure seems to
+overcomplicate the model, reducing its predictive power compared to the
+second model. Therefore, the analysis of O-ring failure estimation at
+31°F will focus on the second model, where temperature and pressure are
+considered independently.</p>
+<h2 id="estimation-of-o-rings-failure-with-a-temperature-of-31f">Estimation
+of O-rings failure with a temperature of 31°F</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>temperature_value <span class="ot">&lt;-</span> <span class="dv">31</span></span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a>mean_pressure <span class="ot">&lt;-</span> <span class="fu">mean</span>(data<span class="sc">$</span>Pressure, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a>mean_pressurerm <span class="ot">&lt;-</span> <span class="fu">mean</span>(datarm<span class="sc">$</span>Pressure, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a><span class="co"># Since the original report doesn&#39;t mention the pressure at take-off, we will use the mean pressure</span></span>
+<span id="cb21-7"><a href="#cb21-7" tabindex="-1"></a>new_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Temperature =</span> temperature_value, <span class="at">Pressure =</span> mean_pressure)</span>
+<span id="cb21-8"><a href="#cb21-8" tabindex="-1"></a>new_datarm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Temperature =</span> temperature_value, <span class="at">Pressure =</span> mean_pressurerm)</span>
+<span id="cb21-9"><a href="#cb21-9" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" tabindex="-1"></a>predicted_prob_m2 <span class="ot">&lt;-</span> <span class="fu">predict</span>(model_2, <span class="at">newdata =</span> new_data, <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
+<span id="cb21-12"><a href="#cb21-12" tabindex="-1"></a>predicted_prob_m2rm <span class="ot">&lt;-</span> <span class="fu">predict</span>(model_2rm, <span class="at">newdata =</span> new_datarm, <span class="at">type =</span> <span class="st">&quot;response&quot;</span>)</span>
+<span id="cb21-13"><a href="#cb21-13" tabindex="-1"></a></span>
+<span id="cb21-14"><a href="#cb21-14" tabindex="-1"></a></span>
+<span id="cb21-15"><a href="#cb21-15" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;(full dataset) Estimated probability of malfunction at 31°F:&quot;</span>, predicted_prob_m2, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## (full dataset) Estimated probability of malfunction at 31°F: 0.6822</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;(filtered dataset) Estimated probability of malfunction at 31°F:&quot;</span>, predicted_prob_m2rm, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## (filtered dataset) Estimated probability of malfunction at 31°F: 0.1764</code></pre>
+<p>The logistic regression model (temperature + pressure) on the full
+dataset shows a high probability of O-ring malfunction at 31°F of 68%.
+Which is consistent with this model showing the significance of the
+temperature on O-ring failure. However in the filtered dataset, the
+model showed no significance of the temperature and now shows a
+probability of failure of 17%. But we have to remember that any
+successfull launch was removed leading to a model having a strong bias
+toward failure.</p>
+
+</body>
+</html>
