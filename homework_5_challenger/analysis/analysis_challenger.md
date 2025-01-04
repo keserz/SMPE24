@@ -296,3 +296,78 @@ model showed no significance of the temperature and now shows a
 probability of failure of 17%. But we have to remember that any
 successfull launch was removed leading to a model having a strong bias
 toward failure.
+
+## Final plot
+
+``` r
+# Generate a sequence of temperatures from 30°F to 90°F
+tempv <- seq(from = 30, to = 90, by = 0.5)
+
+# Use the mean pressure from the data for prediction
+mean_pressure <- mean(data$Pressure, na.rm = TRUE)
+
+# Create a new data frame for predictions with the sequence of temperatures and mean pressure
+new_data <- data.frame(Temperature = tempv, Pressure = mean_pressure)
+
+# Predict probabilities using logmodel, model_2, and model_3
+predicted_prob_logmodel <- predict(logmodel, newdata = new_data, type = "response")
+predicted_prob_model_2 <- predict(model_2, newdata = new_data, type = "response")
+predicted_prob_model_3 <- predict(model_3, newdata = new_data, type = "response")
+
+predicted_prob_logmodelrm <- predict(logmodelrm, newdata = new_data, type = "response")
+predicted_prob_model_2rm <- predict(model_2rm, newdata = new_data, type = "response")
+predicted_prob_model_3rm <- predict(model_3rm, newdata = new_data, type = "response")
+```
+
+    ## Warning in predict.lm(object, newdata, se.fit, scale = 1, type = if (type == : prediction from rank-deficient fit;
+    ## attr(*, "non-estim") has doubtful cases
+
+``` r
+# Create a new data frame with predicted probabilities for all models
+predicted_data <- data.frame(
+  Temperature = rep(tempv, 3),
+  PredictedProbability = c(predicted_prob_logmodel, predicted_prob_model_2, predicted_prob_model_3),
+  Model = rep(c("logmodel", "model_2", "model_3"), each = length(tempv))
+)
+
+predicted_datarm <- data.frame(
+  Temperature = rep(tempv, 3),
+  PredictedProbability = c(predicted_prob_logmodelrm, predicted_prob_model_2rm, predicted_prob_model_3rm),
+  Model = rep(c("logmodel", "model_2", "model_3"), each = length(tempv))
+)
+
+# Create the plot
+ggplot() +
+  # Predicted probabilities as lines for each model
+  geom_line(data = predicted_data, aes(x = Temperature, y = PredictedProbability, color = Model), size = 1) +
+  # Observed probabilities (Malfunction / Count) as red points
+  geom_point(data = data, aes(x = Temperature, y = Malfunction / Count), color = "red", shape = 16) +
+  labs(title = "Predicted vs Observed Probability of O-ring Malfunction",
+       x = "Temperature (°F)", y = "Probability of Malfunction") +
+  theme_minimal() +
+  scale_y_continuous(labels = scales::percent) +
+  scale_color_manual(values = c("blue", "green", "purple")) +
+  theme(legend.position = "top")
+```
+
+![](analysis_challenger_files/figure-gfm/confidence%20intervals-1.png)<!-- -->
+
+``` r
+# Create the plot
+ggplot() +
+  # Predicted probabilities as lines for each model
+  geom_line(data = predicted_datarm, aes(x = Temperature, y = PredictedProbability, color = Model), size = 1) +
+  # Observed probabilities (Malfunction / Count) as red points
+  geom_point(data = data, aes(x = Temperature, y = Malfunction / Count), color = "red", shape = 16) +
+  labs(title = "Predicted vs Observed Probability of O-ring Malfunction",
+       x = "Temperature (°F)", y = "Probability of Malfunction") +
+  theme_minimal() +
+  scale_y_continuous(labels = scales::percent) +
+  scale_color_manual(values = c("blue", "green", "purple")) +
+  theme(legend.position = "top")
+```
+
+![](analysis_challenger_files/figure-gfm/confidence%20intervals-2.png)<!-- -->
+
+logmodel = Temperature alone model_2 = Temperature + Pressure model_3 =
+Temperature \* pressure
